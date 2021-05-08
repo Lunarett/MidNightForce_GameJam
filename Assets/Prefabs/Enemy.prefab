@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7647175185180715046, guid: 9a27b8e88e90e0949bce1ded9fe055b1, type: 3}
-  squareSightRange: 4
+  squareSightRange: 25
   currentState: 0
 --- !u!114 &4286904525726982515
 MonoBehaviour:
