@@ -24,8 +24,6 @@ public class PlayerController : MonoBehaviour
 
             if (rigidbody.velocity.magnitude > maxSpeed)
                 rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
-
-            transform.right = rigidbody.velocity;
         }
         else
         {
