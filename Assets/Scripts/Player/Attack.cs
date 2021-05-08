@@ -30,7 +30,7 @@ public class Attack : MonoBehaviour
     {
         if (attackRunning)
         {
-            if (attackMoment >= Time.time)
+            if (attackMoment <= Time.time)
             {
                 attackRunning = false;
                 hurtbox.SetActive(false);
