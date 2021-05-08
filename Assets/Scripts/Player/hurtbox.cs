@@ -7,12 +7,21 @@ public class hurtbox : MonoBehaviour
     [SerializeField]
     float damage;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    [FMODUnity.EventRef]
+    [SerializeField]
+    string hitSound;
+
+    private void OnTriggerStay2D(Collider2D collider)
     {
-        if (collision.transform.TryGetComponent(out Enemy enemy))
+        if (collider.TryGetComponent(out Enemy enemy))
         {
-            Debug.Log("hit");
             enemy.RecieveDamage(damage);
+            FMODUnity.RuntimeManager.PlayOneShot(hitSound, transform.position);
+        }
+
+        if (collider.TryGetComponent(out Bullet bullet))
+        {
+            Destroy(collider.gameObject);
         }
     }
 }
