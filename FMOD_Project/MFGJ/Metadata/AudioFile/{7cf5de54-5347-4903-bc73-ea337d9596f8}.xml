@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{7cf5de54-5347-4903-bc73-ea337d9596f8}">
+		<property name="assetPath">
+			<value>ES_Sword_Impact_Human_-_SFX_Producer.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.74399999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{095cd8c2-a2eb-4d40-b671-08ff1654913b}</destination>
+		</relationship>
+	</object>
+</objects>
