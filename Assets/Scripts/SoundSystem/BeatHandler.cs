@@ -55,9 +55,10 @@ public class BeatHandler : MonoBehaviour
             float tempo = 60.0f / bpm;
             yield return null;
             t += Time.deltaTime;
-            
-            beatDistance = Mathf.Abs(Mathf.Clamp01(t / tempo) * 2 - 1);
-            beatDistanceClipped = 1 - Mathf.Clamp01(t / tempo);
+
+            float val = 1 - Mathf.Clamp01(t / tempo);
+            beatDistance = Mathf.Abs(val * 2 - 1);
+            beatDistanceClipped = val;
 
             if (t > tempo)
             {
