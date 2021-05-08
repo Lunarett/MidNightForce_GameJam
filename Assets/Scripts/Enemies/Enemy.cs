@@ -68,12 +68,8 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision");
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
-        {
-            Debug.Log("HI");
+       
             currentState = State.turning;
-        }
     }
 
     private void WalkAround()
