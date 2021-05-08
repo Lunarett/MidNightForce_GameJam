@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
         if (collision.transform.TryGetComponent(out PlayerController pc))
         {
             //Hardcoded to 1
-            playerHealth.takeDamage(1);
+            pc.GetComponent<PlayerHealth>().takeDamage(1);
         }
 
         Destroy(gameObject);
