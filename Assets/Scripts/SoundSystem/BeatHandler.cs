@@ -23,12 +23,15 @@ public class BeatHandler : MonoBehaviour
 {
     private static BeatHandler instance;
 
-    private LinkedList<OnBeatBehaviour> beatBehaviours;
-
     [SerializeField] bool testFireBeat;
+    [SerializeField] private float bpm = 60;
+
+    private LinkedList<OnBeatBehaviour> beatBehaviours;
+    private float beatDistance;
 
 
     public static BeatHandler Instance { get => instance; }
+    public float BeatDistance => beatDistance;
 
     private void Awake()
     {
@@ -40,6 +43,27 @@ public class BeatHandler : MonoBehaviour
         }
         instance = this;
         beatBehaviours = new LinkedList<OnBeatBehaviour>();
+
+        StartCoroutine(OnBeatRoutine());
+    }
+
+    private IEnumerator OnBeatRoutine()
+    {
+
+        float t = 0;
+        while (true)
+        {
+            //Update tempo continuously to allow testing modification
+            float tempo = 60.0f / bpm;
+            yield return null;
+            t += Time.deltaTime;
+            beatDistance = 1 - Mathf.Clamp01(t / tempo);
+            if (t > tempo)
+            {
+                t = 0;
+                NotifyOnBeat();
+            }
+        }
     }
 
     private void Update()
