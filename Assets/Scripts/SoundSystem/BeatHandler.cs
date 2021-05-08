@@ -13,11 +13,7 @@ public static class BeatHandlerInitializer
         beatHandler.hideFlags = HideFlags.DontSave;
         beatHandler.AddComponent<BeatHandler>();
     }
-
-
 }
-
-
 
 public class BeatHandler : MonoBehaviour
 {
