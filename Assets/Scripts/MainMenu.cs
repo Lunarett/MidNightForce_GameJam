@@ -49,7 +49,7 @@ public class MainMenu : MonoBehaviour
             clicked = false;
         }
 
-        BeatHandler.Instance.SetMusicLayer(2);
+        BeatHandler.Instance.SetMusicLayer(3);
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
