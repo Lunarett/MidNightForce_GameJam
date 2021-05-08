@@ -5,36 +5,31 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    Rigidbody2D myRB;
+    Rigidbody2D rigidbody;
 
     [SerializeField]
-    float acceleration,maxSpeedSqr;
+    float acceleration, maxSpeed, idleDrag;
 
-    // Start is called before the first frame update
-    void Start()
+    void FixedUpdate()
     {
-        
-    }
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
 
-    // Update is called once per frame
-    void Update()
-    {
+        Vector3 input = new Vector3(horizontal, vertical, 0);
+        if (input.sqrMagnitude > 1) input.Normalize();
 
-        myRB.AddForce(new Vector2(Input.GetAxis("Horizontal") * acceleration, Input.GetAxis("Vertical") * acceleration));
-        if (Input.GetAxis("Horizontal") <= 0.2 && Input.GetAxis("Horizontal") >= -0.2)
+        if (input.sqrMagnitude > 0.1f)
         {
-            myRB.velocity = new Vector2(0, myRB.velocity.y);
-        }
-        if (Input.GetAxis("Vertical") <= 0.2 && Input.GetAxis("Vertical") >= -0.2)
-        {
-            myRB.velocity = new Vector2(myRB.velocity.x, 0);
-        }
+            rigidbody.AddForce(input * Time.fixedDeltaTime * acceleration, ForceMode2D.Impulse);
 
-        if (myRB.velocity.sqrMagnitude <= maxSpeedSqr)
-        {
-            myRB.velocity = myRB.velocity.normalized * maxSpeedSqr;
-        }
+            if (rigidbody.velocity.magnitude > maxSpeed)
+                rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
 
-        //myRB.velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized*movementSpeed;
+            transform.right = rigidbody.velocity;
+        }
+        else
+        {
+            rigidbody.velocity *= 1 - Time.fixedDeltaTime * idleDrag;
+        }
     }
 }

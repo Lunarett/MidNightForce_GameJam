@@ -13,22 +13,23 @@ public static class BeatHandlerInitializer
         beatHandler.hideFlags = HideFlags.DontSave;
         beatHandler.AddComponent<BeatHandler>();
     }
-
-
 }
-
-
 
 public class BeatHandler : MonoBehaviour
 {
     private static BeatHandler instance;
 
-    private LinkedList<OnBeatBehaviour> beatBehaviours;
-
     [SerializeField] bool testFireBeat;
+    [SerializeField] private float bpm = 100;
+
+    private LinkedList<OnBeatBehaviour> beatBehaviours;
+    private float beatDistance;
+    private float beatDistanceClipped;
 
 
     public static BeatHandler Instance { get => instance; }
+    public float BeatDistance => beatDistance;
+    public float BeatDistanceClipped => beatDistanceClipped;
 
     private void Awake()
     {
@@ -40,6 +41,31 @@ public class BeatHandler : MonoBehaviour
         }
         instance = this;
         beatBehaviours = new LinkedList<OnBeatBehaviour>();
+
+        StartCoroutine(OnBeatRoutine());
+    }
+
+    private IEnumerator OnBeatRoutine()
+    {
+
+        float t = 0;
+        while (true)
+        {
+            //Update tempo continuously to allow testing modification
+            float tempo = 60.0f / bpm;
+            yield return null;
+            t += Time.deltaTime;
+
+            float val = 1 - Mathf.Clamp01(t / tempo);
+            beatDistance = Mathf.Abs(val * 2 - 1);
+            beatDistanceClipped = val;
+
+            if (t > tempo)
+            {
+                t = 0;
+                NotifyOnBeat();
+            }
+        }
     }
 
     private void Update()

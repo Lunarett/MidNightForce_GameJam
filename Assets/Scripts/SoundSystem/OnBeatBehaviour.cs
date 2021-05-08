@@ -16,6 +16,9 @@ public abstract class OnBeatBehaviour : MonoBehaviour
     }
 
 
-    public abstract void OnBeat();
+    public virtual void OnBeat() { }
 
 }
+
+
+
