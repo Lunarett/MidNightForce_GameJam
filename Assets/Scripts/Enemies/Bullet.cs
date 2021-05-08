@@ -6,19 +6,36 @@ public class Bullet : MonoBehaviour
 {
     float damage;
     PlayerHealth playerHealth;
+
+    [FMODUnity.EventRef]
+    [SerializeField]
+    string bulletSpawn;
+
+    [FMODUnity.EventRef]
+    [SerializeField]
+    string bulletHit;
+
     public void Init(PlayerHealth playerHealth, float damage)
     {
         this.playerHealth = playerHealth;
         this.damage = damage;
+
+        FMODUnity.RuntimeManager.PlayOneShot(bulletSpawn, transform.position);
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         int layer = collision.gameObject.layer;
         if (layer == LayerMask.NameToLayer("Enemy")) return;
 
-        if (layer == LayerMask.NameToLayer("Player")) playerHealth.takeDamage(damage);
-        Debug.Log(collision);
+        if (collision.transform.TryGetComponent(out PlayerController pc))
+        {
+            //Hardcoded to 1
+            playerHealth.takeDamage(1);
+        }
+
         Destroy(gameObject);
+        FMODUnity.RuntimeManager.PlayOneShot(bulletHit, transform.position);
     }
 
 }

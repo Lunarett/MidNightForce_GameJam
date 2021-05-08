@@ -99,7 +99,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2446689102875295899
 Transform:
   m_ObjectHideFlags: 0
@@ -322,7 +322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc1cd8a05f1014340b524efa2577a5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 10
+  healthPoints: 1
+  deathSound: event:/Death
 --- !u!114 &325343385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +352,7 @@ MonoBehaviour:
   myRB: {fileID: 0}
   attackLength: 0.25
   animator: {fileID: 188978595979597185}
+  hitSound: event:/Impact_Sword
 --- !u!1 &8496264256263971529
 GameObject:
   m_ObjectHideFlags: 0

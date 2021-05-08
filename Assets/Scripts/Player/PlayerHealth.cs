@@ -8,6 +8,10 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     float healthPoints;
 
+    [FMODUnity.EventRef]
+    [SerializeField]
+    string deathSound;
+
     public void takeDamage(float amount)
     {
         healthPoints -= amount;
@@ -18,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Die()
     {
+        FMODUnity.RuntimeManager.PlayOneShot(deathSound, transform.position);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

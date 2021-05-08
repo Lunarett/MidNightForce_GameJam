@@ -39300,6 +39300,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3297068774407472611, guid: 9a27b8e88e90e0949bce1ded9fe055b1, type: 3}
+      propertyPath: hitSound
+      value: event:/Impact_Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 6408743223175849681, guid: 9a27b8e88e90e0949bce1ded9fe055b1, type: 3}
       propertyPath: m_Time
       value: 0.25

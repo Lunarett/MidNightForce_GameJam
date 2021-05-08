@@ -21,6 +21,9 @@ public class Attack : MonoBehaviour
 
     bool attackRunning = false;
 
+    [FMODUnity.EventRef]
+    [SerializeField]
+    string hitSound;
 
     void Update()
     {
@@ -40,6 +43,7 @@ public class Attack : MonoBehaviour
                 hurtbox.SetActive(true);
                 attackMoment = Time.time + attackLength;
                 animator.Play("SimpleAttack");
+                FMODUnity.RuntimeManager.PlayOneShot(hitSound, transform.position);
             }
         }
 
