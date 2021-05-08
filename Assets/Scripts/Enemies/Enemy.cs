@@ -65,11 +65,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-       
-            currentState = State.turning;
+        Turn();
+        //currentState = State.turning;
     }
+    
 
     private void WalkAround()
     {
