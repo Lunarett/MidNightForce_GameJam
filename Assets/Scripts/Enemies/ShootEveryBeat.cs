@@ -10,17 +10,20 @@ public class ShootEveryBeat : OnBeatBehaviour
     [SerializeField]
     private float bulletSpeed;
 
+    [SerializeField]
+    private Transform parent;
+
 
     public override void OnBeat()
     {
-        Debug.Log("Shoot");
         Shoot();
     }
 
     private void Shoot()
     {
-        GameObject newBullet = Instantiate(bullet, transform.position + transform.up * bullet.transform.localScale.x / 2, transform.rotation);
-        newBullet.GetComponent<Rigidbody2D>().velocity += new Vector2(bullet.transform.up.x, bullet.transform.up.y).normalized*bulletSpeed;
+        Debug.Log("Shoot");
+        GameObject newBullet = Instantiate(bullet, transform.position + transform.up, transform.rotation, parent);
+        newBullet.GetComponent<Rigidbody2D>().velocity+=new Vector2(transform.up.x, transform.up.y).normalized*bulletSpeed;
         
     }
 }
