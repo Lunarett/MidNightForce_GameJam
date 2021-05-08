@@ -24,14 +24,16 @@ public class BeatHandler : MonoBehaviour
     private static BeatHandler instance;
 
     [SerializeField] bool testFireBeat;
-    [SerializeField] private float bpm = 60;
+    [SerializeField] private float bpm = 100;
 
     private LinkedList<OnBeatBehaviour> beatBehaviours;
     private float beatDistance;
+    private float beatDistanceClipped;
 
 
     public static BeatHandler Instance { get => instance; }
     public float BeatDistance => beatDistance;
+    public float BeatDistanceClipped => beatDistanceClipped;
 
     private void Awake()
     {
@@ -57,7 +59,10 @@ public class BeatHandler : MonoBehaviour
             float tempo = 60.0f / bpm;
             yield return null;
             t += Time.deltaTime;
-            beatDistance = 1 - Mathf.Clamp01(t / tempo);
+            
+            beatDistance = Mathf.Abs(Mathf.Clamp01(t / tempo) * 2 - 1);
+            beatDistanceClipped = 1 - Mathf.Clamp01(t / tempo);
+
             if (t > tempo)
             {
                 t = 0;

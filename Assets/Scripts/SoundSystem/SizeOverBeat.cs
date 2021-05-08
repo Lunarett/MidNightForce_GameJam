@@ -5,7 +5,8 @@ using UnityEngine;
 public class SizeOverBeat : OnBeatBehaviour
 {
     [SerializeField] AnimationCurve sizeOverDistance;
-
+    [SerializeField] bool useClipped;
+    
     Vector3 initialScale;
 
     private void Awake()
@@ -14,7 +15,9 @@ public class SizeOverBeat : OnBeatBehaviour
     }
     private void Update()
     {
-        float size = sizeOverDistance.Evaluate(BeatHandler.Instance.BeatDistance);
+        float value = useClipped ? BeatHandler.Instance.BeatDistanceClipped : BeatHandler.Instance.BeatDistance;
+
+        float size = sizeOverDistance.Evaluate(value);
 
         transform.localScale = initialScale * size;
     }
