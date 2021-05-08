@@ -21,21 +21,17 @@ public class Enemy : MonoBehaviour
     private bool  shootRegistered;
     private float maxWalkingTime;
     private float currentWalkingTime;
-    [SerializeField]
-    private GameObject bullet;
+    private Rigidbody2D rb;
 
-    [SerializeField]
-    private float bulletSpeed;
 
     private OnBeatBehaviour behaviour;
-
-    public float BulletSpeed => bulletSpeed;
 
     private void Start()
     {
         //Player = FindObjectOfType<Player>().Transform;
         behaviour = GetComponent<OnBeatBehaviour>();
         behaviour.enabled = false;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -50,6 +46,8 @@ public class Enemy : MonoBehaviour
             if (shootRegistered) UnregisterShoot();
 
             currentState = CheckMovementTimeOver() ? State.turning : State.walking;
+
+           
         }
 
         switch (currentState)
@@ -68,9 +66,22 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision");
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        {
+            Debug.Log("HI");
+            currentState = State.turning;
+        }
+    }
+
     private void WalkAround()
     {
-        transform.position += transform.up*Time.deltaTime*SPEED;
+
+        transform.position += (transform.up * Time.deltaTime * SPEED);
+        //rb.AddForce(transform.up * Time.deltaTime * SPEED);
+        //rb.velocity+=(Vector2)(transform.up*Time.deltaTime*SPEED);
         currentWalkingTime += Time.deltaTime;
     }
 
@@ -121,7 +132,7 @@ public class Enemy : MonoBehaviour
 
     private void Death()
     {
-
+        Destroy(gameObject);
     }
 
     private bool SearchForPlayer()
