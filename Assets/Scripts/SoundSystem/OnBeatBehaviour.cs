@@ -9,7 +9,7 @@ public abstract class OnBeatBehaviour : MonoBehaviour
         BeatHandler.Instance.RegisterBeatBehaviour(this);
     }
 
-    protected virtual void OnDestroy()
+    protected virtual void OnDisable()
     {
         if (BeatHandler.Instance)
             BeatHandler.Instance.UnregisterBeatBehaviour(this);
