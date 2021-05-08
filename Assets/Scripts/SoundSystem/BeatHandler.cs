@@ -26,6 +26,9 @@ public class BeatHandler : MonoBehaviour
     private float beatDistance;
     private float beatDistanceClipped;
 
+    private string musicEvent = "event:/Music";
+    FMOD.Studio.EventInstance musicState;
+    FMOD.Studio.PARAMETER_ID layerParameterId;
 
     public static BeatHandler Instance { get => instance; }
     public float BeatDistance => beatDistance;
@@ -43,6 +46,36 @@ public class BeatHandler : MonoBehaviour
         beatBehaviours = new LinkedList<OnBeatBehaviour>();
 
         StartCoroutine(OnBeatRoutine());
+
+        try
+        {
+            musicState = FMODUnity.RuntimeManager.CreateInstance(musicEvent);
+            musicState.start();
+            FMOD.Studio.EventDescription description;
+            musicState.getDescription(out description);
+            FMOD.Studio.PARAMETER_DESCRIPTION paramDesc;
+            description.getParameterDescriptionByName("layer", out paramDesc);
+            layerParameterId = paramDesc.id;
+            SetMusicLayer(0);
+        }
+        catch
+        {
+            //EventNotFound
+        }
+    }
+
+    public void SetMusicLayer(int value)
+    {
+        musicState.setParameterByID(layerParameterId, value);
+    }
+
+    private void OnDestroy()
+    {
+        try
+        {
+            musicState.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
+        catch { }
     }
 
     private IEnumerator OnBeatRoutine()
