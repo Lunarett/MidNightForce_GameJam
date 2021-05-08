@@ -14,6 +14,11 @@ public class PlayerRotator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.LookAt(Input.mousePosition);
+        Vector3 tmp = Input.mousePosition;
+
+        Vector3 targetPos =  tmp - new Vector3(Screen.width*0.5f,Screen.height*0.5f,0);
+
+        Vector3 targetVector = (targetPos ).normalized;
+        this.transform.right = targetVector;
     }
 }
