@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5107614302577586110}
   - component: {fileID: 4441485084030636435}
+  - component: {fileID: 5732384261250775623}
+  - component: {fileID: 6046395414503414570}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -82,6 +84,96 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5732384261250775623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4013283681198022761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a87b4f2b9ba92b4c986e9bc3f8a3754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0.7075472, g: 0.0033374948, b: 0.672759, a: 1}
+    key1: {r: 0.754717, g: 0.23139909, b: 0.7313286, a: 1}
+    key2: {r: 0.764151, g: 0.40730688, b: 0.70712644, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 64978
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  renderer: {fileID: 4441485084030636435}
+  image: {fileID: 0}
+  createMaterialInstance: 1
+--- !u!114 &6046395414503414570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4013283681198022761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f44a8860d76444ea5497c4c7a52c32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizeOverDistance:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.006603673
+      value: 1.0663384
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.57390594
+      value: 1.0009766
+      inSlope: -0.0003374177
+      outSlope: -0.0003374177
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.39439473
+    - serializedVersion: 3
+      time: 1.0066037
+      value: 1.0676807
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 1
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  useClipped: 1
 --- !u!1 &4494741253219600433
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +369,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.35
 --- !u!50 &7647175185180715044
 Rigidbody2D:
   serializedVersion: 4
