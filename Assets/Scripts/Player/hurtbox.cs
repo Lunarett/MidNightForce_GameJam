@@ -9,15 +9,10 @@ public class hurtbox : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == 6)
+        if (collision.transform.TryGetComponent(out Enemy enemy))
         {
             Debug.Log("hit");
-            collision.GetComponent<Enemy>().RecieveDamage(damage);
-        }
-        if (collision.gameObject.layer == 7)
-        {
-            //Destroy(collision.gameObject);
-            //Destroy bullets here
+            enemy.RecieveDamage(damage);
         }
     }
 }

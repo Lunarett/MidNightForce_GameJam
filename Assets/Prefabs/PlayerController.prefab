@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
   m_FlipX: 0
@@ -137,7 +137,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.97121036, y: 0}
@@ -168,6 +168,8 @@ GameObject:
   - component: {fileID: 7647175185180715044}
   - component: {fileID: 6340404316829933035}
   - component: {fileID: 5804107562296880007}
+  - component: {fileID: 325343385}
+  - component: {fileID: 325343391}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -246,7 +248,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -320,3 +322,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 10
+--- !u!114 &325343385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7647175185180715480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c1a53f0956fb264c8385f6a9d05df7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &325343391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7647175185180715480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1b2478eaa481046932f4d673a896d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurtbox: {fileID: 4494741253219600433}
+  myRB: {fileID: 0}
+  attackLength: 1
