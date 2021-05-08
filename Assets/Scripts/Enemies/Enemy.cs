@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        //Player = FindObjectOfType<Player>().Transform;
+        player = FindObjectOfType<PlayerController>().transform;
         behaviour = GetComponent<OnBeatBehaviour>();
         behaviour.enabled = false;
         rb = GetComponent<Rigidbody2D>();
@@ -68,8 +68,9 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-       
-            currentState = State.turning;
+
+        //currentState = State.turning;
+        Turn();
     }
 
     private void WalkAround()
