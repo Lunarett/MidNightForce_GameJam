@@ -13,6 +13,12 @@ public class ShootEveryBeat : OnBeatBehaviour
     [SerializeField]
     private Transform parent;
 
+    [SerializeField]
+    private PlayerHealth playerHealth;
+
+    [SerializeField]
+    float damage;
+
 
     public override void OnBeat()
     {
@@ -24,6 +30,7 @@ public class ShootEveryBeat : OnBeatBehaviour
         //Debug.Log("Shoot");
         GameObject newBullet = Instantiate(bullet, transform.position + transform.up, transform.rotation, parent);
         newBullet.GetComponent<Rigidbody2D>().velocity+=new Vector2(transform.up.x, transform.up.y).normalized*bulletSpeed;
+        newBullet.GetComponent<Bullet>().Init(playerHealth, damage);
         
     }
 }
