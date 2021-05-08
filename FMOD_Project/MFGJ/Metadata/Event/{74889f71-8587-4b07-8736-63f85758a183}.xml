@@ -5,7 +5,7 @@
 			<value>Laser_Shot</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b50b6f64-25bc-492c-a4c2-3533d3a75f9c}</destination>
@@ -125,7 +125,6 @@
 	<object class="MixerBusEffectChain" id="{a9411faf-334d-4a09-a92f-2d4144a3cdff}">
 		<relationship name="effects">
 			<destination>{29976b88-d9de-482a-adde-f6d1ca860c33}</destination>
-			<destination>{ceb8de6b-52ed-434c-b967-4829a45cafb2}</destination>
 			<destination>{8ac5132c-c2be-4155-8173-d2fb5f42c4e6}</destination>
 		</relationship>
 	</object>
@@ -154,10 +153,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{1aee04cd-74d5-4cfe-9c17-743cb0b5aa7a}" />
 	<object class="MixerBusFader" id="{29976b88-d9de-482a-adde-f6d1ca860c33}" />
-	<object class="SpatialiserEffect" id="{ceb8de6b-52ed-434c-b967-4829a45cafb2}" />
 	<object class="DistortionEffect" id="{8ac5132c-c2be-4155-8173-d2fb5f42c4e6}">
 		<property name="level">
-			<value>0.519999981</value>
+			<value>0.569999993</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{b2ee50b2-3aa5-471b-b7c9-2a89ab1763e0}">

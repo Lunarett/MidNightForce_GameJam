@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{49c154ab-7b35-43b4-a8d9-1c2e286371f7}">
+	<object class="AudioFile" id="{9c8fe970-6ce8-4f99-9c1a-f9d732a9f8e5}">
 		<property name="assetPath">
-			<value>ES_Sword_Whip_Court_Sword_1_-_SFX_Producer.mp3</value>
+			<value>Sword_Swing.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>48</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.40799999999999997</value>
+			<value>5.3062585034013603</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{095cd8c2-a2eb-4d40-b671-08ff1654913b}</destination>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{4f99cca5-4a16-47d7-8976-f91d8cdbb0e6}">
+	<object class="AudioFile" id="{63ac2964-c49e-4ea6-8e0f-0492b188b462}">
 		<property name="assetPath">
-			<value>BulletImpact_Flesh_02.mp3</value>
+			<value>ES_Video_Game_Descend_8_-_SFX_Producer (1).mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>5.4240000000000004</value>
+			<value>1.1040000000000001</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{095cd8c2-a2eb-4d40-b671-08ff1654913b}</destination>
