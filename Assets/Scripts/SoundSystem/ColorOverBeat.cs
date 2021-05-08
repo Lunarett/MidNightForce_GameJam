@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ColorOverBeat : OnBeatBehaviour
 {
     [SerializeField] Gradient gradient;
     [SerializeField] Renderer renderer;
+    [SerializeField] Image image;
+
     [SerializeField] bool createMaterialInstance = true;
 
     Material material;
@@ -15,15 +18,26 @@ public class ColorOverBeat : OnBeatBehaviour
         if (!renderer)
             renderer = GetComponent<Renderer>();
 
-        if (createMaterialInstance)
+        else
         {
-            material = Instantiate(renderer.material);
-            renderer.material = material;
+            if (createMaterialInstance)
+            {
+                material = Instantiate(renderer.material);
+                renderer.material = material;
+            }
         }
     }
 
     private void Update()
     {
-        material.color = gradient.Evaluate(BeatHandler.Instance.BeatDistance);
+        Color c = gradient.Evaluate(BeatHandler.Instance.BeatDistance);
+        if (!renderer && image)
+        {
+            image.color = c;
+        }
+        else
+        {
+            material.color = c;
+        }
     }
 }
