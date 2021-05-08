@@ -21,7 +21,7 @@ public class ShootEveryBeat : OnBeatBehaviour
 
     private void Shoot()
     {
-        Debug.Log("Shoot");
+        //Debug.Log("Shoot");
         GameObject newBullet = Instantiate(bullet, transform.position + transform.up, transform.rotation, parent);
         newBullet.GetComponent<Rigidbody2D>().velocity+=new Vector2(transform.up.x, transform.up.y).normalized*bulletSpeed;
         

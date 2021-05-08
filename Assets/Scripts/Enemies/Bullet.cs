@@ -9,9 +9,9 @@ public class Bullet : MonoBehaviour
         int layer = collision.gameObject.layer;
         if (layer == LayerMask.NameToLayer("Enemy")) return;
 
-        if (layer == LayerMask.NameToLayer("Player")) ;
+        if (layer == LayerMask.NameToLayer("Player")) 
         Debug.Log(collision);
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
 }
