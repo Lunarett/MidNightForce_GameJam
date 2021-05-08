@@ -13,7 +13,7 @@ public class ShootEveryBeat : OnBeatBehaviour
     [SerializeField]
     private Transform parent;
 
-    [SerializeField]
+
     private PlayerHealth playerHealth;
 
     [SerializeField]
