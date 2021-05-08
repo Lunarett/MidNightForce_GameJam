@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
-	<object class="AudioFile" id="{f269ae21-ffd2-475c-9420-0066c40c9540}">
+	<object class="AudioFile" id="{a9da28c3-9518-421c-abdd-7617d21a113a}">
 		<property name="assetPath">
-			<value>BulletImpact_Flesh_01.mp3</value>
+			<value>Impact_Flesh01.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>48</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>1.3200000000000001</value>
+			<value>5.3062585034013603</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{095cd8c2-a2eb-4d40-b671-08ff1654913b}</destination>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{ad080228-ccc5-49ae-ae24-3a0a51ced680}">
+		<property name="assetPath">
+			<value>ES_Video_Game_Descend_1_-_SFX_Producer (1).mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.95999999999999996</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{095cd8c2-a2eb-4d40-b671-08ff1654913b}</destination>
+		</relationship>
+	</object>
+</objects>
