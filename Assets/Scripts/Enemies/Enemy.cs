@@ -28,7 +28,6 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        //Player = FindObjectOfType<Player>().Transform;
         behaviour = GetComponent<OnBeatBehaviour>();
         behaviour.enabled = false;
         rb = GetComponent<Rigidbody2D>();
