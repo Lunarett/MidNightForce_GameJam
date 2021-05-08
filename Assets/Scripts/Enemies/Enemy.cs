@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private State currentState;
     private const float SPEED = 1.0f;
+    private const float ROTATION_SPEED = 1.0f;
     private bool  shootRegistered;
     private float maxWalkingTime;
     private float currentWalkingTime;
@@ -62,6 +63,7 @@ public class Enemy : MonoBehaviour
                 currentState = State.walking;
                 break;
             default:
+                TurnTowardsPlayer();
                 break;
         }
     }
@@ -80,6 +82,11 @@ public class Enemy : MonoBehaviour
     private bool CheckMovementTimeOver()
     {
         return currentWalkingTime >= maxWalkingTime;
+    }
+
+    private void TurnTowardsPlayer()
+    {
+        transform.up = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
     }
 
     private void RegisterShoot()
