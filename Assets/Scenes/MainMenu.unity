@@ -123,48 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &453197166 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6668036269329581560, guid: 88d6891cdb27307438467d1a7f4b6f01, type: 3}
-  m_PrefabInstance: {fileID: 6668036268909967510}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &453197170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453197166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8f44a8860d76444ea5497c4c7a52c32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sizeOverDistance:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0.100000024
-      outSlope: 0.100000024
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1.1
-      inSlope: 0.100000024
-      outSlope: 0.100000024
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  useClipped: 1
 --- !u!1 &611363699
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,48 +206,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &901015632 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6668036269342858269, guid: 88d6891cdb27307438467d1a7f4b6f01, type: 3}
-  m_PrefabInstance: {fileID: 6668036268909967510}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &901015633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 901015632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8f44a8860d76444ea5497c4c7a52c32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sizeOverDistance:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0.100000024
-      outSlope: 0.100000024
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1.1
-      inSlope: 0.100000024
-      outSlope: 0.100000024
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  useClipped: 1
 --- !u!1 &2033698817
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,10 +279,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6668036268486210682, guid: 88d6891cdb27307438467d1a7f4b6f01, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6668036269278286442, guid: 88d6891cdb27307438467d1a7f4b6f01, type: 3}
       propertyPath: m_Name
       value: MainMenuCanvas
