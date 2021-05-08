@@ -14,18 +14,14 @@ public class Attack : MonoBehaviour
     [SerializeField]
     float attackLength;
 
+    [SerializeField]
+    Animator animator;
+
     float attackMoment;
 
     bool attackRunning = false;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (attackRunning)
@@ -43,6 +39,7 @@ public class Attack : MonoBehaviour
                 attackRunning = true;
                 hurtbox.SetActive(true);
                 attackMoment = Time.time + attackLength;
+                animator.Play("SimpleAttack");
             }
         }
 
