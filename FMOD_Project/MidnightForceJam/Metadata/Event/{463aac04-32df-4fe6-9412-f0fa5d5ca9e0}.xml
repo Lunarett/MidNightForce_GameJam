@@ -191,6 +191,7 @@
 	<object class="MixerBusEffectChain" id="{909f1f79-ffed-496b-a175-efb3cc937ca3}">
 		<relationship name="effects">
 			<destination>{1bb21709-6010-4a16-8eca-1466b0004946}</destination>
+			<destination>{b0738838-ef7b-48d1-9060-caec44474813}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{8e863363-f9d8-49f6-b5f9-eadbba269214}" />
@@ -237,6 +238,11 @@
 	</object>
 	<object class="MixerBusPanner" id="{00cdf207-8c7f-4a4f-bb83-abe2b187ca8a}" />
 	<object class="MixerBusFader" id="{1bb21709-6010-4a16-8eca-1466b0004946}" />
+	<object class="DistortionEffect" id="{b0738838-ef7b-48d1-9060-caec44474813}">
+		<property name="level">
+			<value>0.354999989</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{3e4d31cb-29b1-4060-9213-e17cc00eeb8e}" />
 	<object class="AutomationPoint" id="{c0aa6b41-363d-489c-a330-b5830a2d3308}">
 		<property name="position">
